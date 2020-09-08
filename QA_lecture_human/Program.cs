@@ -35,16 +35,33 @@ namespace QA_lecture_human
             buzova.MaloPolovin(petro);
             ConsoleSpinner spinner = new ConsoleSpinner();
             spinner.Delay = 300;
-            for (int i = 0; i < 150; i++)            
+            bool exit = false;
+            while (!exit)
             {
-                spinner.Turn(displayMsg: "Playing ", sequenceCode: 5);
+                for (int i = 0; i < 150; i++)
+                {
+                    spinner.Turn(displayMsg: "Playing ", sequenceCode: 5);
+                }
+                Console.WriteLine("Stop this shit? y/n");
+                char key = Console.ReadKey(true).KeyChar;
+                if (key == 'y')
+                {
+                    exit = true;
+                    buzova.player.controls.stop();
+                    Console.WriteLine("OH GOD THANKS...");
+                }
+                else if (key == 'n')
+                {
+                    
+                    Console.WriteLine("Bol`noi ubludok(");
+                }
+                else
+                {
+                    Console.WriteLine("Next time razzui glaza!");
+                }
             }
-            Console.WriteLine("Stop this shit? y/n");
-            char key = Console.ReadKey().KeyChar;
-            if(key == 'y')
-            {
-                buzova.player.controls.stop();
-            }
+
+            ShowAll(humens);
             //Console.WriteLine("Standard parameters\n");
             //alex.ShowParams();
             //maria.ShowParams();
@@ -65,8 +82,8 @@ namespace QA_lecture_human
             Console.WriteLine();
             foreach (var item in humen)
             {
-               
-                Console.Write($"{item.Name}'s params");                
+
+                Console.Write($"{item.Name}'s params");
                 Console.Write("\t");
             }
             Console.WriteLine();
