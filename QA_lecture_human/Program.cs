@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Media;
+using WMPLib;
 namespace QA_lecture_human
 {
     class Program
@@ -8,7 +10,7 @@ namespace QA_lecture_human
 
         static void Main(string[] args)
         {
-
+           
 
             List<Human> humens = new List<Human>();
 
@@ -25,8 +27,18 @@ namespace QA_lecture_human
             humens.Add(buzova);
 
             Console.WriteLine("CONSOLE STORY");
-            //Console.WriteLine("Alex go to shop ");
+            Console.WriteLine("Hello! V istorii est` ");
             ShowAll(humens);
+            WindowsMediaPlayer player;
+            player = new WindowsMediaPlayer();
+            byte[] b = Properties.Resources.buzovaaaa;
+            FileInfo fileInfo = new FileInfo("song.mp3");
+            FileStream fs = fileInfo.OpenWrite();
+            fs.Write(b, 0, b.Length);
+            fs.Close();
+            player.URL = fileInfo.Name;
+            player.controls.play();
+            Console.ReadKey();
             //Console.WriteLine("Standard parameters\n");
             //alex.ShowParams();
             //maria.ShowParams();
