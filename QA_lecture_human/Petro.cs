@@ -19,7 +19,7 @@ namespace QA_lecture_human
             this.Thirst = 2;
             this.Hunger = 4;
 
-            this.Money = 96;
+            this.Money = 150;
         }
     }
 }

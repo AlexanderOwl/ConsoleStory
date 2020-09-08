@@ -8,6 +8,7 @@ namespace QA_lecture_human
 {
     class Buzova : Human
     {
+        public WindowsMediaPlayer player;
         public Buzova()
         {
             this.Name = "Buzova";
@@ -23,9 +24,10 @@ namespace QA_lecture_human
 
             this.Money = 100;
         }
-        public void MaloPolovin()
+
+        public void MaloPolovin(Human human)
         {
-            WindowsMediaPlayer player;
+            
             player = new WindowsMediaPlayer();
             byte[] b = Properties.Resources.buzovaaaa;
             FileInfo fileInfo = new FileInfo("song.mp3");
@@ -34,6 +36,8 @@ namespace QA_lecture_human
             fs.Close();
             player.URL = fileInfo.Name;
             player.controls.play();
+            human.Money -= 100;
+            this.Money += 100;
         }
     }
 }
