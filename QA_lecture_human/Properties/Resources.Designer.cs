@@ -59,5 +59,15 @@ namespace QA_lecture_human.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] buzovaaaa {
+            get {
+                object obj = ResourceManager.GetObject("buzovaaaa", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
