@@ -8,7 +8,7 @@ namespace QA_lecture_human
 
         static void Main(string[] args)
         {
-
+           
 
             List<Human> humens = new List<Human>();
 
@@ -25,8 +25,11 @@ namespace QA_lecture_human
             humens.Add(buzova);
 
             Console.WriteLine("CONSOLE STORY");
-            //Console.WriteLine("Alex go to shop ");
+            Console.WriteLine("Hello! V istorii est` ");
             ShowAll(humens);
+            Console.WriteLine("Buzova - Malo polovin!");
+            buzova.MaloPolovin();
+            Console.ReadKey();
             //Console.WriteLine("Standard parameters\n");
             //alex.ShowParams();
             //maria.ShowParams();
